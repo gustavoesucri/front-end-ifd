@@ -1,0 +1,10 @@
+.doacoesDeposito {
+  border: solid 1px;
+  border-radius: 0px;
+  flex-direction: column;
+}
+
+.doacoesDeposito p {
+  text-align: left;
+  width: 200px;
+}

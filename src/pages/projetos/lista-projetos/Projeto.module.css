@@ -1,0 +1,10 @@
+.projeto {
+  border: solid 1px;
+  border-radius: 16px;
+  padding: 5px;
+  margin-bottom: 10px;
+  display: flex;
+}
+.projeto img {
+  max-width: 300px;
+}

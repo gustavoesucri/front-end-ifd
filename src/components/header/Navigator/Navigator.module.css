@@ -1,0 +1,36 @@
+.navigator {
+  padding: 2px;
+  background-color: rgba(218, 213, 196, 0.8);
+  color: black;
+  position: absolute;
+  top: 0%;
+  right: 3%;
+  border-radius: 2px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav li {
+  display: inline-block; /* Coloca os itens lado a lado */
+  padding: 1pt;
+  margin: 0;
+}
+
+nav li:not(:last-child)::after {
+  /* Adiciona conteúdo após cada li, exceto o último */
+  content: " | "; /* O conteúdo a ser adicionado */
+  margin: 0 0pt; /* Espaçamento opcional ao redor do | */
+}
+
+nav a {
+  text-decoration: none; /* Remove o sublinhado */
+  color: black;
+}
+
+nav a:hover {
+  color: white;
+}

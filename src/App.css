@@ -1,0 +1,18 @@
+/* Variáveis dentro de :root, começam sempre com -- */
+
+:root {
+  --cor-bg-principal: #012f02; /* Definição da variável --cor-principal com o valor #012F02 */
+  --cor-principal: white;
+}
+
+/* Outros estilos globais abaixo */
+
+* {
+  margin: 0 auto;
+  padding: 0;
+  max-width: 960px; /* Aqui é quem delimita a largura das pages roteadas */
+}
+
+h1 {
+  text-align: center;
+}

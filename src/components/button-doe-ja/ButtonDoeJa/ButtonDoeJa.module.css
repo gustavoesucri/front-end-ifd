@@ -1,0 +1,20 @@
+.buttonDoeJa {
+  border: none;
+  background: none;
+  padding: 0;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out; /* Para suavizar o efeito */
+  position: absolute;
+  top: 1%;
+  left: -2%;
+}
+
+/* Efeito ao clicar - a "descida" */
+.buttonDoeJa:active {
+  transform: translateY(2px);
+}
+.buttonDoeJa img {
+  width: 80%; /* ajuste para o tamanho desejado */
+  height: auto; /* mantém a proporção da imagem */
+}

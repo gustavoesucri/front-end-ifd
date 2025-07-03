@@ -1,0 +1,12 @@
+.listaLogosParceiros {
+  display: flex;
+  flex-wrap: wrap; /* Para permitir que as imagens se ajustem quando a tela for menor */
+  gap: 20px; /* Espaçamento entre os logos */
+  margin-bottom: 10%;
+}
+
+.listaLogosParceiros img {
+  max-width: 150px;
+  max-height: 100px;
+  object-fit: contain; /* Isso mantém a proporção das imagens */
+}

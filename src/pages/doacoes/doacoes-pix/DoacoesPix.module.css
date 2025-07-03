@@ -1,0 +1,10 @@
+.doacoesPix {
+  border: solid 1px;
+  border-radius: 0px;
+  flex-direction: column;
+}
+
+.doacoesPix p {
+  text-align: center;
+  width: 200px;
+}

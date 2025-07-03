@@ -1,0 +1,45 @@
+.parceiros section {
+  width: 80%;
+  margin: 1%;
+  /* border: solid 1px;
+    border-radius: 16px; */
+  padding: 1%;
+}
+.parceiros h1 {
+  text-align: center;
+  margin-bottom: 1%;
+}
+/* .parceiros p {
+    padding: 1pt;
+    text-indent: 4em;
+    line-height: 1.5;
+    text-align: justify;
+} */
+
+.dupla {
+  display: flex; /*Coloca a lista de um lado e o click-form de outro*/
+}
+
+.sejaUmParceiro {
+  text-align: center;
+  margin-left: 30%;
+}
+
+.sejaUmParceiro h3 {
+  margin-bottom: 5pt;
+} 
+
+.acessformButton {
+  background: none;
+  color: black;
+  font-size: 17px;
+  cursor: pointer;
+  border: solid 1px;
+  border-radius: 16px;
+  padding: 20pt;
+  text-decoration: none; /* Remove o sublinhado */
+}
+
+.acessformButton:hover {
+   color: rgb(134, 17, 17);
+}
