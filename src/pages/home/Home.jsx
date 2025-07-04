@@ -38,7 +38,9 @@ function Home() {
         {loading ? (
           <p>Carregando conteúdo da Home...</p>
         ) : (
-          paragrafos.map((paragrafo, index) => <p key={index}>{parse(paragrafo)}</p>)
+          paragrafos.map((paragrafo, index) => (
+            <p key={index}>{parse(paragrafo)}</p>
+          ))
         )}
       </section>
     </div>

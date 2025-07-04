@@ -27,7 +27,7 @@
 
 .sejaUmParceiro h3 {
   margin-bottom: 5pt;
-} 
+}
 
 .acessformButton {
   background: none;
@@ -41,5 +41,5 @@
 }
 
 .acessformButton:hover {
-   color: rgb(134, 17, 17);
+  color: rgb(134, 17, 17);
 }

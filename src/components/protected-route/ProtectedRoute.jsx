@@ -1,8 +1,8 @@
-import { Navigate } from 'react-router-dom';
+import { Navigate } from "react-router-dom";
 
 // Verifica se o token JWT está salvo no localStorage
 function isAuthenticated() {
-  return !!localStorage.getItem('token');
+  return !!localStorage.getItem("token");
 }
 
 // Componente para proteger as rotas que precisam estar logadas

@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom";
 
 function Contato() {
   const location = useLocation();
-  // console.log(location); 
+  // console.log(location);
 
   const { assuntoParceiro } = location.state || {}; // Desestruturação para pegar o valor do estado
 
@@ -20,7 +20,9 @@ function Contato() {
           <p>Celular: (08) 990X0-11X1</p>
           <p>CNPJ: 000XX111/0001-01</p>
           <p>E-mail: institutofdantas@email.com</p>
-          <p>Endereço: Rua Amélia Vieira, 387, Bairro São Roque - Cidadela - SC</p>
+          <p>
+            Endereço: Rua Amélia Vieira, 387, Bairro São Roque - Cidadela - SC
+          </p>
           <p>CEP: 888X0-000</p>
         </div>
       </section>

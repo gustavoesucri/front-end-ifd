@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import styles from "./FormContato.module.css";
-import axios from 'axios';
+import axios from "axios";
 
-
-function FormContato( {assuntoParceiro} ) {
+function FormContato({ assuntoParceiro }) {
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
   const [assuntoEnum, setAssuntoEnum] = useState("");
@@ -11,100 +10,104 @@ function FormContato( {assuntoParceiro} ) {
   const [mensagem, setMensagem] = useState("");
   const [errors, setErrors] = useState({});
 
-  useState( () => {
-    console.log(`assuntoParceiro ${assuntoParceiro}`)
-    if (assuntoParceiro === "parceiro"){
-      setAssuntoEnum(assuntoParceiro)
+  useState(() => {
+    console.log(`assuntoParceiro ${assuntoParceiro}`);
+    if (assuntoParceiro === "parceiro") {
+      setAssuntoEnum(assuntoParceiro);
     }
-  },[])
+  }, []);
 
   const validarEmail = (email) => {
     return /^\S+@\S+\.\S+$/.test(email);
   };
 
   const handleNomeChange = (e) => {
-  setNome(e.target.value);
-  if (errors.nome) {
-    setErrors((prev) => {
-      const newErrors = { ...prev };
-      delete newErrors.nome;
-      return newErrors;
-    });
-  }
-};
-
+    setNome(e.target.value);
+    if (errors.nome) {
+      setErrors((prev) => {
+        const newErrors = { ...prev };
+        delete newErrors.nome;
+        return newErrors;
+      });
+    }
+  };
 
   const handleEmailChange = (e) => {
-  setEmail(e.target.value);
-  if (errors.email) {
-    setErrors((prev) => {
-      const newErrors = { ...prev };
-      delete newErrors.email;
-      return newErrors;
-    });
-  }
-};
+    setEmail(e.target.value);
+    if (errors.email) {
+      setErrors((prev) => {
+        const newErrors = { ...prev };
+        delete newErrors.email;
+        return newErrors;
+      });
+    }
+  };
 
-const handleAssuntoEnumChange = (e) => {
-  setAssuntoEnum(e.target.value);
-  if (errors.assuntoEnum) {
-    setErrors((prev) => {
-      const newErrors = { ...prev };
-      delete newErrors.assuntoEnum;
-      return newErrors;
-    });
-  }
-};
+  const handleAssuntoEnumChange = (e) => {
+    setAssuntoEnum(e.target.value);
+    if (errors.assuntoEnum) {
+      setErrors((prev) => {
+        const newErrors = { ...prev };
+        delete newErrors.assuntoEnum;
+        return newErrors;
+      });
+    }
+  };
 
-const handleAssuntoLivreChange = (e) => {
-  setAssuntoLivre(e.target.value);
-  if (errors.assuntoLivre) {
-    setErrors((prev) => {
-      const newErrors = { ...prev };
-      delete newErrors.assuntoLivre;
-      return newErrors;
-    });
-  }
-};
+  const handleAssuntoLivreChange = (e) => {
+    setAssuntoLivre(e.target.value);
+    if (errors.assuntoLivre) {
+      setErrors((prev) => {
+        const newErrors = { ...prev };
+        delete newErrors.assuntoLivre;
+        return newErrors;
+      });
+    }
+  };
 
-const handleMensagemChange = (e) => {
-  setMensagem(e.target.value);
-  if (errors.mensagem) {
-    setErrors((prev) => {
-      const newErrors = { ...prev };
-      delete newErrors.mensagem;
-      return newErrors;
-    });
-  }
-};
-
+  const handleMensagemChange = (e) => {
+    setMensagem(e.target.value);
+    if (errors.mensagem) {
+      setErrors((prev) => {
+        const newErrors = { ...prev };
+        delete newErrors.mensagem;
+        return newErrors;
+      });
+    }
+  };
 
   const handleSubmit = async (event) => {
-  event.preventDefault();
+    event.preventDefault();
 
-  const novosErros = {};
+    const novosErros = {};
 
-  // Validações de tamanho primeiro
-  if (nome.length > 150) novosErros.nome = "O nome deve ter no máximo 150 caracteres.";
-  if (email.length > 100) novosErros.email = "O email deve ter no máximo 100 caracteres.";
-  if (assuntoLivre.length > 69) novosErros.assuntoLivre = "O assunto personalizado deve ter no máximo 69 caracteres.";
-  if (mensagem.length > 5000) novosErros.mensagem = "A mensagem deve ter no máximo 5000 caracteres.";
+    // Validações de tamanho primeiro
+    if (nome.length > 150)
+      novosErros.nome = "O nome deve ter no máximo 150 caracteres.";
+    if (email.length > 100)
+      novosErros.email = "O email deve ter no máximo 100 caracteres.";
+    if (assuntoLivre.length > 69)
+      novosErros.assuntoLivre =
+        "O assunto personalizado deve ter no máximo 69 caracteres.";
+    if (mensagem.length > 5000)
+      novosErros.mensagem = "A mensagem deve ter no máximo 5000 caracteres.";
 
-  // Validações de preenchimento
-  if (!nome.trim()) novosErros.nome = "Insira um nome.";
-  if (!email.trim()) novosErros.email = "Insira um e-mail para contato.";
-  else if (!validarEmail(email)) novosErros.email = "Email inválido.";
-  if (!assuntoEnum) novosErros.assuntoEnum = "Selecione um assunto.";
-  if (assuntoEnum === "geral" && !assuntoLivre.trim())
-    novosErros.assuntoLivre = "Especifique o Assunto.";
-  if (!mensagem.trim()) novosErros.mensagem = "Preencha o campo com a sua mensagem.";
+    // Validações de preenchimento
+    if (!nome.trim()) novosErros.nome = "Insira um nome.";
+    if (!email.trim()) novosErros.email = "Insira um e-mail para contato.";
+    else if (!validarEmail(email)) novosErros.email = "Email inválido.";
+    if (!assuntoEnum) novosErros.assuntoEnum = "Selecione um assunto.";
+    if (assuntoEnum === "geral" && !assuntoLivre.trim())
+      novosErros.assuntoLivre = "Especifique o Assunto.";
+    if (!mensagem.trim())
+      novosErros.mensagem = "Preencha o campo com a sua mensagem.";
 
-  setErrors(novosErros);
+    setErrors(novosErros);
 
-  if (Object.keys(novosErros).length > 0) {
-    alert("Por favor, preencha corretamente os campos do formulário.");
-    return;
-  }
+    if (Object.keys(novosErros).length > 0) {
+      alert("Por favor, preencha corretamente os campos do formulário.");
+      return;
+    }
 
     // console.log("Dados do formulário:", {
     //   nome,
@@ -114,28 +117,29 @@ const handleMensagemChange = (e) => {
     //   mensagem,
     // });
 
-   try {
-    const response = await axios.post("http://localhost:3001/contato", { // URL_DO_SEU_BACKEND/contato
-  name: nome,
-  email: email,
-  subject: assuntoEnum,
-  customSubject: assuntoLivre || undefined,
-  message: mensagem,
-});
+    try {
+      const response = await axios.post("http://localhost:3001/contato", {
+        // URL_DO_SEU_BACKEND/contato
+        name: nome,
+        email: email,
+        subject: assuntoEnum,
+        customSubject: assuntoLivre || undefined,
+        message: mensagem,
+      });
 
-    alert("Mensagem enviada com sucesso!");
-    
-    setNome("");
-    setEmail("");
-    setAssuntoEnum("");
-    setAssuntoLivre("");
-    setMensagem("");
-    setErrors({});
-  } catch (error) {
-    alert("Erro ao enviar a mensagem. Tente novamente mais tarde.");
-    console.error(error);
-  }
-};
+      alert("Mensagem enviada com sucesso!");
+
+      setNome("");
+      setEmail("");
+      setAssuntoEnum("");
+      setAssuntoLivre("");
+      setMensagem("");
+      setErrors({});
+    } catch (error) {
+      alert("Erro ao enviar a mensagem. Tente novamente mais tarde.");
+      console.error(error);
+    }
+  };
 
   return (
     <div className={styles.formularioContainer}>
@@ -164,7 +168,9 @@ const handleMensagemChange = (e) => {
             maxLength={100}
             className={styles.formInput}
           />
-          {errors.email && <small className={styles.error}>{errors.email}</small>}
+          {errors.email && (
+            <small className={styles.error}>{errors.email}</small>
+          )}
         </div>
 
         <div className={styles.formGroup}>
