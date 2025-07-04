@@ -15,6 +15,7 @@ import CampanhaDetalhada from "./pages/campanhas/CampanhaDetalhada";
 import Login from "./components/login/Login";
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import ProtectedRoute from "./components/protected-route/ProtectedRoute";
+import ProjetosAdmin from "./pages/admin/ProjetosAdmin";
 
 function App() {
   return (
@@ -37,6 +38,14 @@ function App() {
           element={
             <ProtectedRoute>
               <AdminDashboard />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin/projetos"
+          element={
+            <ProtectedRoute>
+              <ProjetosAdmin />
             </ProtectedRoute>
           }
         />
